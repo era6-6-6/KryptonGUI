@@ -237,13 +237,13 @@ namespace Krypton_Core
 
         }
 
-        private async void TweenMethod()
+        private async Task TweenMethod()
         {
              while(true)
              {
                     try
                     {
-                        if(_user.userData.Ready)
+                        if(true)
                         {
                             var sw = new Stopwatch();
                             sw.Start();
