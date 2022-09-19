@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KryptonGUI.Components.Npcs"
+      SizeChanged="Grid_SizeChanged"
+      Background="#191919">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Picker x:Name="NpcPickerMap">
+        <Picker.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>x-1</x:String>
+                <x:String>x-2</x:String>
+                <x:String>x-3</x:String>
+                <x:String>x-4</x:String>
+                <x:String>x-5</x:String>
+                <x:String>x-6</x:String>
+                <x:String>x-7</x:String>
+                <x:String>x-8</x:String>
+            </x:Array>
+        </Picker.ItemsSource>
+    </Picker>
+
+
+
+</Grid>

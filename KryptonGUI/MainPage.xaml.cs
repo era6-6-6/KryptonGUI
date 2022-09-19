@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
 
 	private void LogIn_Clicked(object sender, EventArgs e)
 	{
-		AppShell.instance.AddPage(new MainPage(){Title = "test"});
+		AppShell.instance.AddPage(new Krypton_Core.Api(Username.Text , Password.Text),new MainPage(){Title = "test"});
 	}
 }
 

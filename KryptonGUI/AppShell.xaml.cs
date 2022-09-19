@@ -1,4 +1,5 @@
 ﻿
+using Krypton_Core;
 
 namespace KryptonGUI;
 
@@ -10,14 +11,14 @@ public partial class AppShell : Shell
 		InitializeComponent();
         instance = this;
 	}
-    public void AddPage(ContentPage page, string icon = "krypton_logo.png")
+    public void AddPage(Api api,ContentPage page, string icon = "krypton_logo.png")
     {
         
         AppShell.instance.FlyoutBehavior = FlyoutBehavior.Flyout;
         var item = new FlyoutItem()
         {
 
-            Title = "Account name",
+            Title = api._user.Name,
             Route = "botWindow",
 
             Icon = icon,
@@ -27,7 +28,7 @@ public partial class AppShell : Shell
                     new ShellContent
                     {
                         Title = "test",
-                        Content = new UserWindow()
+                        Content = new UserWindow(api)
                     },
                     new ShellContent
                     {

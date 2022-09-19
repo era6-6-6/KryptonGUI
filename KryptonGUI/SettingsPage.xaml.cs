@@ -24,11 +24,18 @@ public partial class SettingsPage : ContentPage
     private void SettngsPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
         Debug.WriteLine(SettngsPicker.SelectedItem.ToString());
-        switch(SettngsPicker.SelectedItem.ToString())
+        ComponentsGrid.Children.Clear();
+        switch (SettngsPicker.SelectedItem.ToString())
         {
+            
             case "General":
                 {
                     ComponentsGrid.Children.Add(new General());
+                    break;
+                }
+            case "Npcs":
+                {
+                    ComponentsGrid.Children.Add(new Npcs());
                     break;
                 }
         }
