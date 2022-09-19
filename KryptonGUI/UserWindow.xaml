@@ -20,7 +20,8 @@
             <Button Text="Stop" VerticalOptions="Center" HorizontalOptions="Center"></Button>
         </StackLayout>
         <Border Margin="10,0,0,0" Grid.Column="0" Grid.Row="1" Stroke="Gray" StrokeThickness="4">
-            <GraphicsView x:Name="Minimap" Grid.Row="1" Grid.Column="0"/>
+            <GraphicsView x:Name="Minimap" Grid.Row="1" Grid.Column="0" StartInteraction="Minimap_StartInteraction"/>
+            
         </Border>
     </Grid>
 </ContentPage>

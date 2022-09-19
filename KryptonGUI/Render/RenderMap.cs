@@ -1,4 +1,5 @@
 ﻿using Krypton_Core;
+using KryptonGUI.Components;
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,7 @@ namespace KryptonGUI.Render
 
             convertX = (double)x / 20500;
             convertY = (double)y / 13000;
+
             if (MapID == 29 || MapID == 16 || MapID == 91 || MapID == 93)
             {
                 convertX = (double)x / 41000;
@@ -50,6 +52,9 @@ namespace KryptonGUI.Render
             Tasks.Add(DrawBases(canvas));
             Tasks.Add(DrawPorts(canvas));
             Tasks.Add(DrawPlayer(canvas));
+            Tasks.Add(DrawNpcs(canvas));
+            Tasks.Add(DrawBoxes(canvas));
+
             await Task.WhenAll(Tasks);
         }  
         private async Task DrawPlayer(ICanvas canvas)
@@ -74,6 +79,24 @@ namespace KryptonGUI.Render
             {
                 canvas.DrawEllipse(ReturnFloat(port.X) * (float)convertX, ReturnFloat(port.Y) * (float)convertY, 20, 20);
             }
+        }
+        private async Task DrawNpcs(ICanvas canvas)
+        {
+            canvas.FillColor = Colors.Red;
+            foreach (var Npc in Api._user.players.Npcs.ToList())
+            {
+                canvas.FillEllipse((float)(Npc.X * convertX), (float)(Npc.Y * convertY), 8, 8);
+            }
+
+        }
+        private async Task DrawBoxes(ICanvas canvas)
+        {
+            canvas.FillColor = Colors.Red;
+            foreach (var Box in Api._user.Boxes.CloseBoxes.ToList())
+            {
+                canvas.FillEllipse((float)(Box.X * convertX), (float)(Box.Y * convertY), 8, 8);
+            }
+
         }
         private float ReturnFloat(int num)
         {

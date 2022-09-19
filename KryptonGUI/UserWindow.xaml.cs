@@ -6,8 +6,9 @@ namespace KryptonGUI;
 
 public partial class UserWindow : ContentPage
 {
-    Api Api { get; init; }
-	public UserWindow(Api api)
+	Api Api { get; init; }
+	
+    public UserWindow(Api api)
 	{
         Api = api;
         InitializeComponent();
@@ -37,4 +38,38 @@ public partial class UserWindow : ContentPage
             }
         }
 	}
+
+	private void Minimap_StartInteraction(object sender, TouchEventArgs e)
+	{
+		double X = Minimap.Width;
+		double Y = Minimap.Height;
+		int MapID = Api._user.userData.MapID;
+
+        double convertX;
+        double convertY;
+
+        convertX = (double)X / 20500;
+        convertY = (double)Y / 13000;
+
+        if (MapID == 29 || MapID == 16 || MapID == 91 || MapID == 93)
+        {
+            convertX = (double)X / 41000;
+            convertY = (double)Y / 26000;
+        }
+
+
+
+        PointF firstPoint = e.Touches.FirstOrDefault();
+		if(Api.logic == null)
+		{
+			Api.logic = new Krypton_Core.Logic.LogicMethods(Api , Api.Tweener);
+		}
+		Api.logic.FlyToCorndinates((int)(firstPoint.X / convertX), (int)(firstPoint.Y / convertY));
+
+        
+
+
+        Debug.WriteLine($"ship sent to X:{(int)(firstPoint.X / convertX)} Y:{(int)(firstPoint.Y / convertY)}");
+
+    }
 }
