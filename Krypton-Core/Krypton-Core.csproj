@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Krypton_Core</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <FileVersion>2.0.1.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Collections\Game\Ships\" />
+    <Folder Include="Managers\Sorting\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AStarLite" Version="1.1.0" />
+    <PackageReference Include="Dijkstra.net" Version="1.2.1" />
+    <PackageReference Include="Moq" Version="4.18.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+  </ItemGroup>
+
+</Project>
