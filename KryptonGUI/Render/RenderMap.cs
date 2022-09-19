@@ -1,5 +1,4 @@
-﻿
-using Krypton_Core;
+﻿using Krypton_Core;
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;

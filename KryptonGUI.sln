@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptonGUI", "KryptonGUI\Kr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krypton-Core", "..\..\..\Desktop\Krypton-Core\Krypton-Core.csproj", "{7575038B-545D-431F-A159-2699E0675789}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton-Core", "Krypton-Core\Krypton-Core.csproj", "{9F7F20E1-A697-4E75-ACB2-843AFCCE9641}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{7575038B-545D-431F-A159-2699E0675789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7575038B-545D-431F-A159-2699E0675789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7575038B-545D-431F-A159-2699E0675789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F7F20E1-A697-4E75-ACB2-843AFCCE9641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F7F20E1-A697-4E75-ACB2-843AFCCE9641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F7F20E1-A697-4E75-ACB2-843AFCCE9641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F7F20E1-A697-4E75-ACB2-843AFCCE9641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
