@@ -32,7 +32,6 @@ public partial class AppShell : Shell
                     new ShellContent
                     {
                         Title = "Settings",
-                        Icon = "settings.png",
                         Content = new SettingsPage()
                         
                     }
