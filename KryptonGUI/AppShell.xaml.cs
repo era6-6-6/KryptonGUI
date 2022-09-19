@@ -33,7 +33,6 @@ public partial class AppShell : Shell
                     {
                         Title = "Settings",
                         Content = new SettingsPage()
-                        
                     }
                 }
 

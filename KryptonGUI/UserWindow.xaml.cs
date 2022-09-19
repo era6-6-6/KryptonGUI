@@ -8,6 +8,7 @@ public partial class UserWindow : ContentPage
 	public UserWindow()
 	{
 		InitializeComponent();
+		Minimap.Background = Color.FromRgb(0, 0, 0);
 		Thread temp = new Thread(RenderThread);
         temp.Start();
 
