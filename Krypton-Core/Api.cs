@@ -82,10 +82,8 @@ namespace Krypton_Core
             Sr = new SortingClass(this);
             CleanLists();
             apis.Add(this);
-            
-            Thread tweenThread = new(new ThreadStart(TweenMethod));
-            tweenThread.IsBackground = true;
-            tweenThread.Start();
+
+            Task.Run(async () => await TweenMethod());
             Skylab = new(this);
             BackGroudSettings = new(this);
             GalaxyGate = new(this);
@@ -239,19 +237,17 @@ namespace Krypton_Core
 
         }
 
-        private void TweenMethod()
+        private async void TweenMethod()
         {
-            while (true)
-            {
-               while(true)
-               {
+             while(true)
+             {
                     try
                     {
                         if(_user.userData.Ready)
                         {
                             var sw = new Stopwatch();
                             sw.Start();
-                            Thread.Sleep(13);
+                            await Task.Delay(13);
                             Tweener.Update(sw.ElapsedMilliseconds);
                             sw.Stop();
                         }
@@ -272,8 +268,8 @@ namespace Krypton_Core
                     {
                         InvokeError(ex.ToString(), false, false);
                     }
-               }
-            }
+             }
+            
         }
         
         public async Task Jump()
